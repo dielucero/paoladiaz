@@ -1,236 +1,413 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paola Diaz, La Loba - Cantante</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Paola Diaz, La Loba - Cantante riojana con más de 30 años de trayectoria. Especialista en folklore, cuarteto, tango y música argentina.">
+    <meta name="keywords" content="Paola Diaz, La Loba, cantante, La Rioja, folklore argentino, cuarteto riojano, música tradicional, artista nacional">
+    <meta name="author" content="Paola Diaz, La Loba">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Paola Diaz, La Loba - Cantante">
+    <meta property="og:description" content="Cantante riojana con más de 30 años de trayectoria. Folklore, cuarteto, tango y más.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://paoladiaz.com">
+    <meta property="og:image" content="https://paoladiaz.com/img/pd-ppl.jpg">
+    <meta property="og:image:alt" content="Paola Diaz, La Loba - Cantante riojana">
+    <meta property="og:locale" content="es_AR">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Paola Diaz, La Loba - Cantante">
+    <meta name="twitter:description" content="Cantante riojana con más de 30 años de trayectoria musical.">
+    <meta name="twitter:image" content="https://paoladiaz.com/img/pd-ppl.jpg">
+    
+    <!-- Technical SEO -->
+    <link rel="canonical" href="https://paoladiaz.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <title>Paola Diaz, La Loba - Cantante | Folklore y Cuarteto Riojano</title>
     <link rel="icon" type="image/png" href="./img/loup_tribal.png">
-    <!-- Google Fonts for artist-friendly typography -->
+    <link rel="apple-touch-icon" href="./img/loup_tribal.png">
+    
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="./css/index.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Paola Diaz",
+        "alternateName": "La Loba",
+        "jobTitle": "Cantante",
+        "description": "Cantante riojana con más de 30 años de trayectoria en folklore, cuarteto y música argentina",
+        "birthPlace": "Banfield, Buenos Aires, Argentina",
+        "nationality": "Argentina",
+        "genre": ["Folklore", "Cuarteto", "Tango", "Música Argentina"],
+        "sameAs": [
+            "https://wa.me/5493804273662",
+            "https://www.facebook.com/paoladiazLALOBA/?locale=es_LA",
+            "https://www.instagram.com/paoladiaz_laloba/reels/",
+            "https://www.youtube.com/@paoladiaz_LALOBA",
+            "https://x.com/PaoDiaz_LaRioja"
+        ]
+    }
+    </script>
 </head>
 <body>
-    <!-- Music Player -->
-    <div class="floating-music-player">
-        <div class="player-container">
-            <div class="player-info">
-                <div class="song-marquee">
-                    <div class="marquee-content" id="current-song">Amor superficial</div>
-                </div>
-                <div class="artist-info">Paola Diaz, La Loba</div>
-            </div>
-            
-            <div class="player-controls">
-                <button id="play-btn" class="control-btn play-btn">▶</button>
-                <button id="next-btn" class="control-btn">⏭</button>
-                <button id="stop-btn" class="control-btn">⏹</button>
-                <button id="playlist-btn" class="control-btn playlist-btn" aria-label="Abrir lista de reproducción">🎵</button>
-            </div>
-        </div>
-        
-        <!-- Playlist desplegable -->
-        <div class="playlist-dropdown" id="playlist-dropdown">
-            <div class="playlist">
-                <div class="song-item active" data-song="0">
-                    <span class="song-title">Amor superficial</span>
-                    <span class="song-duration">3:45</span>
-                </div>
-                <div class="song-item" data-song="1">
-                    <span class="song-title">Corre</span>
-                    <span class="song-duration">4:12</span>
-                </div>
-                <div class="song-item" data-song="2">
-                    <span class="song-title">Equivocada</span>
-                    <span class="song-duration">3:28</span>
-                </div>
-                <div class="song-item" data-song="3">
-                    <span class="song-title">No sabía</span>
-                    <span class="song-duration">3:50</span>
-                </div>
-            </div>
-        </div>
-        
-        <audio id="audio-player" preload="metadata">
-            <!-- Las canciones se cargarán dinámicamente -->
-        </audio>
-    </div>
-
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-wrapper">
-          <a href="#home" class="brand-logo">Paola Diaz, La Loba</a>
-          <ul>
-            <li><a href="#home">Inicio</a></li>
-            <li><a href="#gallery">Galería</a></li>
-            <li><a href="#about">Biografía</a></li>
-            <li><a href="#contact">Contacto</a></li>
-          </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="hero-content">
-            <div class="hero-image">
-                <img id="hero-slideshow" src="./img/pd-ppl.jpg" alt="Paola Diaz, La Loba">
-            </div>
-            <div class="hero-text">
-                <h1 class="hero-title">Paola Diaz, La Loba</h1>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery-section">
-        <div class="container">
-            <h2 class="section-title">Galería</h2>
-            <div class="row">
-                <div class="col s12 m6 l4">
-                    <div class="card">
-                        <div class="card-image"><img class="gallery-image" src="./img/1.jpg" alt="Galería 1" data-index="0" loading="lazy"></div>
+    <header class="site-header">
+        <div class="floating-music-player" role="region" aria-label="Reproductor de música">
+            <div class="player-container">
+                <div class="player-info">
+                    <div class="song-marquee" aria-live="polite" aria-atomic="true">
+                        <span class="marquee-content" id="song-title">Cargando...</span>
                     </div>
-                </div>
-                <div class="col s12 m6 l4">
-                    <div class="card">
-                        <div class="card-image"><img class="gallery-image" src="./img/2.jpg" alt="Galería 2" data-index="1" loading="lazy"></div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4">
-                    <div class="card">
-                        <div class="card-image"><img class="gallery-image" src="./img/3.jpg" alt="Galería 3" data-index="2" loading="lazy"></div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4">
-                    <div class="card">
-                        <div class="card-image"><img class="gallery-image" src="./img/4.jpg" alt="Galería 4" data-index="3" loading="lazy"></div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4">
-                    <div class="card">
-                        <div class="card-image"><img class="gallery-image" src="./img/5.jpg" alt="Galería 5" data-index="4" loading="lazy"></div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4">
-                    <div class="card">
-                        <div class="card-image"><img class="gallery-image" src="./img/6.jpg" alt="Galería 6" data-index="5" loading="lazy"></div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4">
-                    <div class="card">
-                        <div class="card-image"><img class="gallery-image" src="./img/7.jpg" alt="Galería 7" data-index="6" loading="lazy"></div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4">
-                    <div class="card">
-                        <div class="card-image"><img class="gallery-image" src="./img/8.jpg" alt="Galería 8" data-index="7" loading="lazy"></div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4">
-                    <div class="card">
-                        <div class="card-image"><img class="gallery-image" src="./img/9.jpg" alt="Galería 9" data-index="8" loading="lazy"></div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4">
-                    <div class="card">
-                        <div class="card-image"><img class="gallery-image" src="./img/10.jpg" alt="Galería 10" data-index="9" loading="lazy"></div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4">
-                    <div class="card">
-                        <div class="card-image"><img class="gallery-image" src="./img/11.jpg" alt="Galería 11" data-index="10" loading="lazy"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Galería">
-        <button class="lightbox-close" aria-label="Cerrar">×</button>
-        <button class="lightbox-prev" aria-label="Anterior">⟨</button>
-        <img class="lightbox-image" src="" alt="Imagen de galería ampliada">
-        <button class="lightbox-next" aria-label="Siguiente">⟩</button>
-    </div>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="row">
-                <div class="col s12">
-                    <h2 class="section-title">Biografía</h2>
-                    <div class="row">
-                        <div class="col s12">
-                            <p class="flow-text">🐺 Paola Isabel Díaz García – “La Loba”</p>
-                            <p class="flow-text">Nacida en Banfield (Buenos Aires) y criada en La Rioja, Paola Díaz comenzó su camino artístico en el Centro Polivalente de Arte “Estanislao Guzmán Loza”, donde estudió Danzas Folklóricas Argentinas y Latinoamericanas.</p>
-                            <p class="flow-text">A temprana edad se destacó como solista de canto, obteniendo múltiples premios en certámenes estudiantiles nacionales, entre ellos cinco ediciones consecutivas del festival “Saldán Folklore Joven” (Córdoba). Formó parte del grupo Piaguivoz, con el que recorrió festivales del país y ganó en el Festival de la Aceituna (Arauco) y en San Nicolás de los Arroyos (Buenos Aires).</p>
-                            <p class="flow-text">En 1995 fue convocada como corista del Súper Grupo Manzana, convirtiéndose junto a Verónica Maza en una de las primeras mujeres coristas del cuarteto riojano. Grabó ocho discos y representó al género en todo el país.</p>
-                            <p class="flow-text">En 2003 inició su carrera solista, participando en el Festival Nacional de la Canción (La Rioja), donde fue reconocida como Mejor Solista de Canto. A partir de allí amplió su repertorio incorporando folklore, música mexicana, tango, cuarteto y melódico, convirtiéndose en la única artista riojana en dominar varios géneros.</p>
-                            <p class="flow-text">En 2010 regresó a Súper Grupo Manzana para “El Reencuentro”, esta vez como socia y cantante solista, hasta 2012. Luego se incorporó al Staff de la Secretaría de Cultura de La Rioja y fundó su propia banda tropical, dando origen a su nombre artístico: “La Loba”.</p>
-                            <p class="flow-text">Con más de 30 años de trayectoria, Paola “La Loba” Díaz sigue recorriendo escenarios del país con la misma pasión, fuerza y carisma que la consagraron como una de las voces más queridas del norte argentino.</p>
+                    <div class="artist-info" id="artist-name">Paola Diaz, La Loba</div>
+                    <div class="timeline-container">
+                        <div class="timeline" id="timeline">
+                            <div class="timeline-progress" id="timeline-progress"></div>
+                        </div>
+                        <div class="time-display">
+                            <span id="current-time">0:00</span>
+                            <span>/</span>
+                            <span id="total-time">0:00</span>
                         </div>
                     </div>
                 </div>
+                
+                <div class="player-controls" role="group" aria-label="Controles de reproducción">
+                    <button id="prev-btn" class="control-btn" aria-label="Canción anterior" tabindex="0">⏮</button>
+                    <button id="play-btn" class="control-btn play-btn" aria-label="Reproducir música" tabindex="0">▶</button>
+                    <button id="pause-btn" class="control-btn" aria-label="Pausar música" tabindex="0">⏸</button>
+                    <button id="stop-btn" class="control-btn" aria-label="Detener música" tabindex="0">⏹</button>
+                    <button id="next-btn" class="control-btn" aria-label="Siguiente canción" tabindex="0">⏭</button>
+                    <button id="playlist-btn" class="control-btn playlist-btn" aria-label="Abrir lista de reproducción" aria-expanded="false" tabindex="0">🎵</button>
+                </div>
             </div>
+            
+            <div class="playlist-dropdown" id="playlist-dropdown" role="dialog" aria-label="Lista de reproducción" aria-hidden="true">
+                <h3 class="playlist-title visually-hidden">Lista de reproducción</h3>
+                <div class="playlist" role="list" aria-label="Canciones disponibles">
+                    <div class="song-item active" data-song="0" role="listitem" tabindex="0" aria-selected="true">
+                        <span class="song-title">Amor superficial</span>
+                        <span class="song-duration">3:45</span>
+                    </div>
+                    <div class="song-item" data-song="1" role="listitem" tabindex="0" aria-selected="false">
+                        <span class="song-title">Corre</span>
+                        <span class="song-duration">4:12</span>
+                    </div>
+                    <div class="song-item" data-song="2" role="listitem" tabindex="0" aria-selected="false">
+                        <span class="song-title">Equivocada</span>
+                        <span class="song-duration">3:28</span>
+                    </div>
+                    <div class="song-item" data-song="3" role="listitem" tabindex="0" aria-selected="false">
+                        <span class="song-title">No sabía</span>
+                        <span class="song-duration">3:50</span>
+                    </div>
+                    <div class="song-item" data-song="4" role="listitem" tabindex="0" aria-selected="false">
+                        <span class="song-title">No te mentía</span>
+                        <span class="song-duration">4:30</span>
+                    </div>
+                </div>
+            </div>
+            
+            <audio id="audio-player" preload="metadata" aria-label="Reproductor de audio"></audio>
         </div>
-    </section>
 
-    <!-- Contact Section (minimal info only) -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="row">
-                <div class="col s12">
-                    <h2 class="section-title">Contacto</h2>
-                    <div class="row">
-                        <div class="col s12">
-                            <div class="contact-info">
-                                <p>
-                                    <a href="https://wa.me/5493804273662" class="contact-link wa-link" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-                                        <svg class="wa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true"><path fill="#25D366" d="M19.11 17.52c-.26-.13-1.53-.75-1.77-.83-.24-.09-.42-.13-.6.13-.17.26-.69.83-.85 1-.16.17-.31.19-.57.06-.26-.13-1.08-.4-2.05-1.28-.76-.67-1.27-1.5-1.42-1.76-.15-.26-.02-.4.11-.53.12-.12.26-.31.39-.46.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.6-1.44-.82-1.98-.22-.53-.45-.46-.6-.46-.15 0-.32-.02-.49-.02-.17 0-.45.06-.68.32-.24.26-.9.88-.9 2.14 0 1.26.92 2.48 1.05 2.65.13.17 1.81 2.76 4.39 3.86.61.26 1.08.41 1.45.52.61.19 1.17.16 1.61.1.49-.07 1.53-.62 1.75-1.22.22-.6.22-1.11.15-1.22-.06-.11-.24-.17-.5-.3z"/><path fill="#25D366" d="M26.61 5.39C23.74 2.52 20.03 1 16 1S8.26 2.52 5.39 5.39 1 11.97 1 16c0 2.47.66 4.88 1.92 6.99L1 31l8.2-1.9C11.25 30.34 13.59 31 16 31c4.03 0 7.74-1.52 10.61-4.39C29.48 23.74 31 20.03 31 16s-1.52-7.74-4.39-10.61zM16 28.89c-2.11 0-4.17-.56-5.97-1.62l-.43-.25-4.86 1.13 1.04-4.73-.28-.44C4.35 20.9 3.78 18.49 3.78 16c0-6.74 5.48-12.22 12.22-12.22S28.22 9.26 28.22 16 22.74 28.89 16 28.89z"/></svg>
-                                        <span>+54 9 3804 27-3662</span>
-                                    </a>
-                                </p>
-                                <p>📍 La Rioja, Argentina</p>
+        <nav class="main-navigation" role="navigation" aria-label="Navegación principal">
+            <div class="nav-wrapper">
+              <a href="#home" class="brand-logo" rel="home" aria-label="Ir al inicio">Paola Diaz, La Loba</a>
+              <button class="button-collapse" aria-label="Menú de navegación" aria-expanded="false" aria-controls="nav-menu" tabindex="0">☰</button>
+              <ul class="nav-links" id="nav-menu" role="menubar">
+                <li role="none"><a href="#home" role="menuitem" tabindex="0">Inicio</a></li>
+                <li role="none"><a href="#gallery" role="menuitem" tabindex="0">Galería</a></li>
+                <li role="none"><a href="#about" role="menuitem" tabindex="0">Biografía</a></li>
+                <li role="none"><a href="#contact" role="menuitem" tabindex="0">Contacto</a></li>
+              </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section id="home" class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img id="hero-slideshow" src="./img/pd-ppl.jpg" alt="Paola Diaz, La Loba - Cantante riojana en presentación en vivo" loading="eager">
+                </div>
+                <div class="hero-text">
+                    <h1 id="hero-title" class="hero-title">Paola Diaz, La Loba</h1>
+                    <p class="hero-subtitle">Cantante riojana con más de 30 años de trayectoria</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery-section" aria-labelledby="gallery-title">
+            <div class="container">
+                <header>
+                    <h2 id="gallery-title" class="section-title">Galería de Fotos</h2>
+                    <p class="section-description">Explora momentos destacados de la carrera de Paola Diaz, La Loba</p>
+                </header>
+                <div class="gallery-grid" role="grid" aria-label="Galería de imágenes de Paola Diaz">
+                    <div class="gallery-item" role="gridcell">
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="gallery-image" src="./img/1.jpg" alt="Paola Diaz en escenario - Presentación en vivo" data-index="0" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" role="gridcell">
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="gallery-image" src="./img/2.jpg" alt="Paola Diaz con instrumentos tradicionales" data-index="1" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" role="gridcell">
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="gallery-image" src="./img/3.jpg" alt="Concierto de folklore - Paola Diaz cantando" data-index="2" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" role="gridcell">
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="gallery-image" src="./img/4.jpg" alt="Paola Diaz con banda tropical - Música riojana" data-index="3" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" role="gridcell">
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="gallery-image" src="./img/5.jpg" alt="Presentación en festival folklórico" data-index="4" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" role="gridcell">
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="gallery-image" src="./img/6.jpg" alt="Paola Diaz con público - Interacción con fans" data-index="5" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" role="gridcell">
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="gallery-image" src="./img/7.jpg" alt="Estudio de grabación - Sesión de música" data-index="6" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" role="gridcell">
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="gallery-image" src="./img/8.jpg" alt="Concierto acústico - Intimo y personal" data-index="7" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" role="gridcell">
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="gallery-image" src="./img/9.jpg" alt="Festival de la Tradición - Evento cultural" data-index="8" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" role="gridcell">
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="gallery-image" src="./img/10.jpg" alt="Paola Diaz con guitarra - Instrumento tradicional" data-index="9" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" role="gridcell">
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="gallery-image" src="./img/11.jpg" alt="Cierre de concierto - Aplausos del público" data-index="10" loading="lazy">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
+        <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Visor de imágenes de la galería">
+            <button class="lightbox-close" aria-label="Cerrar visor de imágenes" tabindex="0">×</button>
+            <button class="lightbox-prev" aria-label="Ver imagen anterior" tabindex="0">⟨</button>
+            <img class="lightbox-image" src="" alt="Imagen de galería ampliada de Paola Diaz">
+            <button class="lightbox-next" aria-label="Ver siguiente imagen" tabindex="0">⟩</button>
+        </div>
+
+        <section id="about" class="about-section" aria-labelledby="about-title">
+            <div class="container">
+                <div class="about-content">
+                    <header>
+                        <h2 id="about-title" class="section-title">Biografía</h2>
+                        <p class="section-description">Conoce la trayectoria artística de Paola Isabel Díaz García</p>
+                    </header>
+                    <div class="bio-text">
+                        <p class="flow-text">🐺 <strong>Paola Isabel Díaz García – "La Loba"</strong></p>
+                        <p class="flow-text">Nacida en Banfield (Buenos Aires) y criada en La Rioja, Paola Díaz comenzó su camino artístico en el Centro Polivalente de Arte "Estanislao Guzmán Loza", donde estudió Danzas Folklóricas Argentinas y Latinoamericanas.</p>
+                        <p class="flow-text">A temprana edad se destacó como solista de canto, obteniendo múltiples premios en certámenes estudiantiles nacionales, entre ellos cinco ediciones consecutivas del festival "Saldán Folklore Joven" (Córdoba). Formó parte del grupo Piaguivoz, con el que recorrió festivales del país y ganó en el Festival de la Aceituna (Arauco) y en San Nicolás de los Arroyos (Buenos Aires).</p>
+                        <p class="flow-text">En 1995 fue convocada como corista del Súper Grupo Manzana, convirtiéndose junto a Verónica Maza en una de las primeras mujeres coristas del cuarteto riojano. Grabó ocho discos y representó al género en todo el país.</p>
+                        <p class="flow-text">En 2003 inició su carrera solista, participando en el Festival Nacional de la Canción (La Rioja), donde fue reconocida como Mejor Solista de Canto. A partir de allí amplió su repertorio incorporando folklore, música mexicana, tango, cuarteto y melódico, convirtiéndose en la única artista riojana en dominar varios géneros.</p>
+                        <p class="flow-text">En 2010 regresó a Súper Grupo Manzana para "El Reencuentro", esta vez como socia y cantante solista, hasta 2012. Luego se incorporó al Staff de la Secretaría de Cultura de La Rioja y fundó su propia banda tropical, dando origen a su nombre artístico: "La Loba".</p>
+                        <p class="flow-text">Con más de 30 años de trayectoria, Paola "La Loba" Díaz sigue recorriendo escenarios del país con la misma pasión, fuerza y carisma que la consagraron como una de las voces más queridas del norte argentino.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="contact-content">
+                    <header>
+                        <h2 id="contact-title" class="section-title">Contacto</h2>
+                        <p class="section-description">Contrataciones y presentaciones</p>
+                    </header>
+                        <div class="contact-info">
+                            <div class="contact-grid-horizontal">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                    </div>
+                                    <div class="contact-text">
+                                        <strong>Ubicación</strong>
+                                        <span>La Rioja, Argentina</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <a href="https://wa.me/5493804273662" class="contact-link" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+                                        <div class="contact-icon whatsapp">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94.967-.173.099-.373.149-.562.05-.191-.099-.562-.297-.967-.497-.404-.199-.767-.149-.956.149-.189.297-1.016.967-1.234 1.234-.217.267-.436.4-.655.4-.217 0-.436-.04-.655-.149-.217-.111-.424-.655-.767-1.234-.342-.579-.655-1.234-.655-1.234s-.436-.149-.956.149c-.52.298-1.234.967-1.234.967s-.81 1.016-.81 2.229c0 1.213.87 2.426 1.016 2.426s2.426 4.852 4.852 4.852c2.426 0 2.426-.81 2.426-.81s1.016-.714 1.234-.967c.217-.253.149-.471.149-.655 0-.217-.149-.436-.436-.655-.287-.217-.655-.436-1.016-.655z"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c1.19 0 2.34-.21 3.41-.6.3.11.6.22.9.31 0 0 1.4.6 1.4.6.22.11.44.23.66.31 1.06.42 2.06.75 2.06.75.11.05.22.05.33 0 .22-.11.44-.23.66-.31 0 0-.6-1.4-.6-1.4-.11-.3-.22-.6-.31-.9-.39-1.07-.6-2.22-.6-3.41 0-5.52 4.48-10 10-10s10 4.48 10 10c0 1.19-.21 2.34-.6 3.41-.11.3-.22.6-.31.9 0 0-.6 1.4-.6 1.4-.11.22-.23.44-.31.66-.11.22-.11.44 0 .66.11.42.75 2.06.75 2.06.11.05.22.05.33 0 .22-.11.44-.23.66-.31 0 0-1.4-.6-1.4-.6-.3-.11-.6-.22-.9-.31-1.07-.39-2.22-.6-3.41-.6z"></path></svg>
+                                        </div>
+                                        <div class="contact-text">
+                                            <strong>WhatsApp</strong>
+                                            <span>+54 9 3804 27-3662</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <a href="https://www.facebook.com/paoladiazLALOBA/?locale=es_LA" class="contact-link" target="_blank" rel="noopener" aria-label="Visitar Facebook">
+                                        <div class="contact-icon facebook">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+                                        </div>
+                                        <div class="contact-text">
+                                            <strong>Facebook</strong>
+                                            <span>@paoladiazLALOBA</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <a href="https://www.instagram.com/paoladiaz_laloba/reels/" class="contact-link" target="_blank" rel="noopener" aria-label="Visitar Instagram">
+                                        <div class="contact-icon instagram">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="url(#instagram-gradient)" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"></path><defs><linearGradient id="instagram-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#833AB4"></stop><stop offset="50%" stop-color="#FD1D1D"></stop><stop offset="100%" stop-color="#FCB045"></stop></linearGradient></defs></svg>
+                                        </div>
+                                        <div class="contact-text">
+                                            <strong>Instagram</strong>
+                                            <span>@paoladiaz_laloba</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <a href="https://x.com/PaoDiaz_LaRioja" class="contact-link" target="_blank" rel="noopener" aria-label="Visitar X (Twitter)">
+                                        <div class="contact-icon twitter">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000" aria-hidden="true"><path d="M18.244 2.25h3.118l.897 4.602-3.68-1.957L21.75 23.25l-3.5-6.5L24 7.5h-3.5l-1.75 4.602-3.68 1.957L2.25 23.25l3.5-6.5L0 7.5h3.5l1.75-4.602 3.68-1.957z"></path></svg>
+                                        </div>
+                                        <div class="contact-text">
+                                            <strong>X (Twitter)</strong>
+                                            <span>@PaoDiaz_LaRioja</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <a href="https://www.youtube.com/@paoladiaz_LALOBA" class="contact-link" target="_blank" rel="noopener" aria-label="Visitar YouTube">
+                                        <div class="contact-icon youtube">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FF0000" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505a3.017 3.017 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+                                        </div>
+                                        <div class="contact-text">
+                                            <strong>YouTube</strong>
+                                            <span>@paoladiaz_LALOBA</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer class="page-footer">
         <div class="container">
-            ©2025 Paola Diaz - La Rioja, Argentina - Todos los derechos reservados!
+            <p>&copy; 2026 Paola Diaz, La Loba - La Rioja, Argentina - Powered by Trikode Ingeniería</p>
+            <nav class="footer-nav" aria-label="Navegación secundaria">
+                <a href="#home" class="footer-link">Inicio</a>
+                <span class="separator">|</span>
+                <a href="#gallery" class="footer-link">Galería</a>
+                <span class="separator">|</span>
+                <a href="#about" class="footer-link">Biografía</a>
+                <span class="separator">|</span>
+                <a href="#contact" class="footer-link">Contacto</a>
+            </nav>
         </div>
     </footer>
+    
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link" aria-label="Saltar al contenido principal">Saltar al contenido</a>
+    
+    <!-- Back to top button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Volver arriba" tabindex="0" hidden>
+        ↑
+    </button>
 
-    <!-- JavaScript -->
     <script src="./js/index.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        var heroImg = document.getElementById('hero-slideshow');
+        const heroImg = document.getElementById('hero-slideshow');
         if (!heroImg) return;
-        var images = [
+        
+        const images = [
           './img/1.jpg','./img/2.jpg','./img/3.jpg','./img/4.jpg','./img/5.jpg',
           './img/6.jpg','./img/7.jpg','./img/8.jpg','./img/9.jpg','./img/10.jpg','./img/11.jpg'
         ];
-        // Preload
-        images.forEach(function(src){ var i=new Image(); i.src=src; });
-        var idx = 0;
-        var intervalMs = 5000;
-        function nextHero() {
+        
+        // Preload images
+        images.forEach(src => {
+          const img = new Image();
+          img.src = src;
+        });
+        
+        let currentIndex = 0;
+        const intervalMs = 5000;
+        
+        function showNextImage() {
           heroImg.style.opacity = '0';
-          setTimeout(function(){
-            idx = (idx + 1) % images.length;
-            heroImg.src = images[idx];
+          setTimeout(() => {
+            currentIndex = (currentIndex + 1) % images.length;
+            heroImg.src = images[currentIndex];
             heroImg.style.opacity = '1';
           }, 400);
         }
-        setInterval(nextHero, intervalMs);
+        
+        setInterval(showNextImage, intervalMs);
       });
     </script>
 </body>
